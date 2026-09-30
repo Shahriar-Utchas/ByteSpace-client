@@ -5,7 +5,6 @@ import DiscoverPassion from "./_components/DiscoverPassion";
 import ExploreLearning from "./_components/ExploreLearning";
 import ProfessionalPath from "./_components/ProfessionalPath";
 import CreateCourse from "./_components/CreateCourse";
-import UnlockPotential from "./_components/UnlockPotential";
 import ClientReview from "./_components/ClientReview";
 
 export default function HomePage() {
@@ -20,7 +19,7 @@ export default function HomePage() {
       <ExploreLearning />
       <ProfessionalPath />
       <CreateCourse />
-      <UnlockPotential />
+      {/* <UnlockPotential /> */}
       <ClientReview />
     </>
   );
