@@ -19,7 +19,6 @@ export default function HomePage() {
       <ExploreLearning />
       <ProfessionalPath />
       <CreateCourse />
-      {/* <UnlockPotential /> */}
       <ClientReview />
     </>
   );
