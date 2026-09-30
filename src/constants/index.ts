@@ -23,21 +23,21 @@ type HeroAssets = {
  * All defaults are local so Next.js can optimize them without remote host rules.
  */
 export const HERO_ASSETS = {
-  logo: "/hero-assets/logo.png",
-  student: "/hero-assets/hero.png",
+  logo: "/assets/hero-assets/logo.png",
+  student: "/assets/hero-assets/hero.png",
   decorations: {
-    limeSpiral: "/hero-assets/left-yellow.png",
-    smallWhiteSpiral: "/hero-assets/right-white.png",
-    whiteRing: "/hero-assets/left-white-circle.png",
-    limeShape: "/hero-assets/right-yellow.png",
-    whiteTriangle: "/hero-assets/right-Cone-white.png",
-    largeWhiteSpiral: "/hero-assets/lefy-white.png",
+    limeSpiral: "/assets/hero-assets/left-yellow.png",
+    smallWhiteSpiral: "/assets/hero-assets/right-white.png",
+    whiteRing: "/assets/hero-assets/left-white-circle.png",
+    limeShape: "/assets/hero-assets/right-yellow.png",
+    whiteTriangle: "/assets/hero-assets/right-Cone-white.png",
+    largeWhiteSpiral: "/assets/hero-assets/lefy-white.png",
   },
   avatars: [
-    "/hero-assets/avatar-1.jpg",
-    "/hero-assets/avatar-2.jpg",
-    "/hero-assets/avatar-3.jpg",
-    "/hero-assets/avatar-4.jpg",
-    "/hero-assets/avatar-5.jpg",
+    "/assets/hero-assets/avatar-1.jpg",
+    "/assets/hero-assets/avatar-2.jpg",
+    "/assets/hero-assets/avatar-3.jpg",
+    "/assets/hero-assets/avatar-4.jpg",
+    "/assets/hero-assets/avatar-5.jpg",
   ],
 } as const satisfies HeroAssets;
