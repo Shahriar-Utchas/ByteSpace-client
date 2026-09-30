@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 180" fill="none">
+  <defs>
+    <linearGradient id="a" x1="38" y1="19" x2="174" y2="157" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/>
+      <stop offset=".55" stop-color="#F7F8FB"/>
+      <stop offset="1" stop-color="#CFD3DC"/>
+    </linearGradient>
+    <filter id="b" x="2" y="4" width="204" height="174" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="9" stdDeviation="6" flood-color="#001C75" flood-opacity=".2"/>
+    </filter>
+  </defs>
+  <path filter="url(#b)" fill="url(#a)" fill-rule="evenodd" d="M202 85c0 45-45 83-101 83S8 142 8 97 48 13 104 13s98 27 98 72Zm-49 4c0 21-22 41-51 41s-47-13-47-34 20-43 49-43 49 15 49 36Z"/>
+  <path d="M24 70c18-39 57-54 91-49" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".75"/>
+</svg>
