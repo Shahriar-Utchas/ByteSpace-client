@@ -4,22 +4,22 @@ import { clashDisplay } from "@/app/fonts";
 import { HERO_ASSETS } from "@/constants";
 
 const linkStyles =
-  "rounded-md text-[13px] leading-none text-white/95 no-underline transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] max-sm:text-xs";
+  "rounded-md text-[10px] leading-none text-white/95 no-underline transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] lg:text-[13px] max-sm:text-xs";
 
 export default function Navbar() {
   return (
     <header className="relative z-20 h-20 text-white max-sm:h-[68px]">
       <nav
-        className="mx-auto grid h-full w-[calc(100%_-_10rem)] max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center max-md:w-[calc(100%_-_2rem)] max-md:grid-cols-[1fr_auto] max-sm:w-[calc(100%_-_1.75rem)]"
+        className="mx-auto grid h-full w-[calc(100%_-_9.375rem)] max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center max-md:w-[calc(100%_-_2rem)] max-md:grid-cols-[1fr_auto] max-sm:w-[calc(100%_-_1.75rem)]"
         aria-label="Primary navigation"
       >
         <Link
-          className={`${clashDisplay.className} inline-flex items-center gap-2 justify-self-start rounded-md text-[19px] font-semibold tracking-[-0.02em] text-white no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] max-sm:gap-1.5 max-sm:text-[17px]`}
+          className={`${clashDisplay.className} inline-flex items-center gap-[5px] justify-self-start rounded-md text-[15px] font-semibold tracking-[-0.02em] text-white no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] lg:gap-2 lg:text-[19px] max-sm:gap-1.5 max-sm:text-[17px]`}
           href="/"
           aria-label="ByteSpace home"
         >
           <Image
-            className="h-7 w-[26px] shrink-0 object-contain max-sm:h-6 max-sm:w-[22px]"
+            className="h-5 w-[19px] shrink-0 object-contain lg:h-7 lg:w-[26px] max-sm:h-6 max-sm:w-[22px]"
             src={HERO_ASSETS.logo}
             alt="ByteSpace"
             width={116}
@@ -28,7 +28,7 @@ export default function Navbar() {
           <span>ByteSpace</span>
         </Link>
 
-        <div className="flex items-center gap-[34px] max-md:hidden">
+        <div className="flex items-center gap-[18px] max-md:hidden">
           <Link className={linkStyles} href="/">
             Home
           </Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-[26px] justify-self-end max-md:gap-[18px] max-sm:gap-[13px]">
+        <div className="flex translate-x-1.5 items-center gap-3.5 justify-self-end max-md:translate-x-0 max-md:gap-[18px] max-sm:gap-[13px]">
           <Link className={`${linkStyles} max-sm:hidden`} href="/login">
             Sign In
           </Link>
