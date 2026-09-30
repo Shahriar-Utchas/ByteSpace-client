@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/layout";
 import { satoshi } from "./fonts";
 import "./globals.css";
 
@@ -17,7 +16,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${satoshi.className} bg-white text-[#171717] antialiased`}>
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );
