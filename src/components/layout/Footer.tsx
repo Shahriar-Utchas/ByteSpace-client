@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { clashDisplay } from "@/app/fonts";
-import { HERO_ASSETS } from "@/constants";
+import FooterNewsletterForm from "./FooterNewsletterForm";
 
 type FooterLink = {
   readonly label: string;
@@ -11,18 +11,18 @@ type FooterLink = {
 
 const FOOTER_LINK_GROUPS = [
   [
-    { label: "Featured Courses", href: "/#courses" },
-    { label: "Featured Categories", href: "/#courses" },
-    { label: "Business", href: "/#courses" },
-    { label: "IT", href: "/#courses" },
-    { label: "Design", href: "/#courses" },
+    { label: "Featured Courses", href: "/courses" },
+    { label: "Featured Categories", href: "/courses" },
+    { label: "Business", href: "/courses" },
+    { label: "IT", href: "/courses" },
+    { label: "Design", href: "/courses" },
   ],
   [
-    { label: "Development", href: "/#courses" },
-    { label: "Marketing", href: "/#courses" },
-    { label: "Photography", href: "/#courses" },
-    { label: "Finance", href: "/#courses" },
-    { label: "Sport", href: "/#courses" },
+    { label: "Development", href: "/courses" },
+    { label: "Marketing", href: "/courses" },
+    { label: "Photography", href: "/courses" },
+    { label: "Finance", href: "/courses" },
+    { label: "Sport", href: "/courses" },
   ],
   [
     { label: "Become a Creator", href: "/register" },
@@ -42,72 +42,81 @@ const LEGAL_LINKS = [
 const footerLinkStyles =
   "rounded-sm text-xs leading-none text-[#3E4148] no-underline transition-colors hover:text-[#003BE2] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2]";
 
-export default function Footer() {
+export default function Footer({ variant = "default" }: { variant?: "default" | "search" }) {
+  const isSearch = variant === "search";
+
   return (
-    <footer className="bg-white pt-16 pb-12 text-[#30333A] max-sm:pt-12 max-sm:pb-8">
-      <div className="home-container">
-        <div className="grid gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-[100px]">
-          <div className="max-w-[525px]">
+    <footer
+      className={`bg-white text-[#242528] max-sm:pb-8 ${
+        isSearch
+          ? "min-h-[525px] border-t border-[#CED0D3] pt-[70px] pb-12 max-sm:pt-12"
+          : "pt-16 pb-12 max-sm:pt-12"
+      }`}
+    >
+      <div className={isSearch ? "course-container" : "home-container"}>
+        <div
+          className={`grid gap-14 lg:grid-cols-[1.15fr_1fr] ${
+            isSearch ? "lg:grid-cols-[528px_1fr] lg:gap-[92px]" : "lg:gap-[100px]"
+          }`}
+        >
+          <div className={isSearch ? "max-w-[528px]" : "max-w-[525px]"}>
             <Link
-              className={`${clashDisplay.className} inline-flex items-center gap-2 rounded-sm text-[20px] font-semibold tracking-[-0.025em] text-[#181A20] no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#003BE2]`}
+              className={`${clashDisplay.className} inline-flex items-center gap-2 rounded-sm font-semibold text-[#242528] no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#003BE2] ${
+                isSearch ? "text-2xl" : "text-[20px] tracking-[-0.025em]"
+              }`}
               href="/"
               aria-label="ByteSpace home"
             >
               <Image
-                className="h-7 w-[26px] object-contain"
-                src={HERO_ASSETS.logo}
+                className={isSearch ? "size-8 object-contain" : "size-7 object-contain"}
+                src="/assets/hero-assets/logo-mark.svg"
                 alt=""
-                width={116}
-                height={126}
+                width={32}
+                height={32}
               />
               <span>ByteSpace</span>
             </Link>
 
-            <p className="mt-4 text-[13px] leading-[1.6] text-[#555962]">
+            <p
+              className={`mt-4 text-[#4B4C53] ${
+                isSearch ? "text-sm leading-[1.6]" : "text-[13px] leading-[1.6]"
+              }`}
+            >
               Stay Up to date with our latest features and releases by joining our
               newsletter.
             </p>
 
-            <form
-              className="mt-9 flex max-w-[470px] items-center gap-4 max-sm:flex-col max-sm:items-stretch"
-              action=""
-              method="get"
-            >
-              <label className="sr-only" htmlFor="footer-email">
-                Email address
-              </label>
-              <input
-                className="h-[46px] min-w-0 flex-1 rounded-full border border-[#C9CCD2] bg-white px-5 text-xs text-[#1D2027] outline-none placeholder:text-[#666A73] focus:border-[#003BE2] focus:ring-3 focus:ring-[#003BE2]/15"
-                id="footer-email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                autoComplete="email"
-                required
-              />
-              <button
-                className="h-11 cursor-pointer rounded-full bg-[#D4FB20] px-6 text-xs font-medium text-[#142800] transition-shadow hover:shadow-[0_8px_20px_rgba(48,70,0,0.18)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2] max-sm:self-start"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
+            <FooterNewsletterForm searchVariant={isSearch} />
 
-            <p className="mt-5 max-w-[470px] text-[10px] leading-[1.65] text-[#555962]">
+            <p
+              className={`text-[#4B4C53] ${
+                isSearch
+                  ? "mt-6 max-w-[504px] text-xs leading-[1.6]"
+                  : "mt-5 max-w-[470px] text-[10px] leading-[1.65]"
+              }`}
+            >
               By subscribing, you agree to our Privacy Policy and consent to receive
               updates from our company.
             </p>
           </div>
 
           <nav
-            className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-3 lg:gap-x-12"
+            className={`grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-3 ${
+              isSearch ? "lg:gap-x-10 lg:pt-12" : "lg:gap-x-12"
+            }`}
             aria-label="Footer navigation"
           >
             {FOOTER_LINK_GROUPS.map((group, groupIndex) => (
-              <ul className="space-y-5" key={`footer-group-${groupIndex + 1}`}>
+              <ul
+                className={isSearch ? "space-y-4" : "space-y-5"}
+                key={`footer-group-${groupIndex + 1}`}
+              >
                 {group.map((link) => (
                   <li key={link.label}>
-                    <Link className={footerLinkStyles} href={link.href}>
+                    <Link
+                      className={`${footerLinkStyles} ${isSearch ? "text-sm leading-[1.6] text-[#242528]" : ""}`}
+                      href={link.href}
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -117,9 +126,17 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-28 border-t border-[#D1D4D9] pt-5 max-md:mt-16">
-          <div className="flex items-center justify-between gap-6 text-[10px] text-[#3E4148] max-sm:flex-col max-sm:items-start">
-            <p>© 2023 ByteSpace. All rights reserved.</p>
+        <div
+          className={`border-t border-[#CED0D3] pt-[22px] max-md:mt-16 ${
+            isSearch ? "mt-[130px]" : "mt-28"
+          }`}
+        >
+          <div
+            className={`flex items-center justify-between gap-6 text-[#3E4148] max-sm:flex-col max-sm:items-start ${
+              isSearch ? "text-xs leading-[1.6]" : "text-[10px]"
+            }`}
+          >
+            <p>{isSearch ? "@" : "©"} 2023 ByteSpace. All rights reserved.</p>
 
             <nav aria-label="Legal navigation">
               <ul className="flex flex-wrap items-center gap-x-6 gap-y-3">
