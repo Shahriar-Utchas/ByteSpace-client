@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@layer components {
+  .home-container {
+    width: calc(100% - 2rem);
+    max-width: 100rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 48rem) {
+    .home-container {
+      width: calc(100% - 4rem);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .home-container {
+      width: calc(100% - 6rem);
+    }
+  }
+}

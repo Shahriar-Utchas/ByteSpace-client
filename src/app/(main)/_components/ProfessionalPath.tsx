@@ -49,7 +49,7 @@ export default function ProfessionalPath() {
         <div className="absolute -right-[18%] -bottom-[25%] h-[70%] w-[68%] bg-[radial-gradient(50%_50%_at_50%_50%,rgba(0,59,226,0.24)_0%,rgba(0,59,226,0.0552)_53%,rgba(0,59,226,0.0144)_75%,rgba(0,59,226,0)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-[calc(100%_-_2rem)] max-w-[1120px] lg:w-[calc(100%_-_5rem)]">
+      <div className="home-container relative z-10">
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div className="max-w-[470px] max-lg:mx-auto max-lg:text-center">
             <h2

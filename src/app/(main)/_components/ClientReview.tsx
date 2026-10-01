@@ -73,7 +73,7 @@ export default function ClientReview() {
         <div className="absolute -top-[30%] left-[18%] h-[100%] w-[72%] bg-[radial-gradient(50%_50%_at_50%_50%,rgba(203,252,1,0.6)_0%,rgba(203,252,1,0.138)_53%,rgba(203,252,1,0.036)_75%,rgba(203,252,1,0)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-[calc(100%_-_2rem)] max-w-[1120px] lg:w-[calc(100%_-_5rem)]">
+      <div className="home-container relative z-10">
         <header className="grid items-center gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <h2
             className={`${poppins.className} max-w-[500px] text-[29px] leading-[1.2] font-semibold tracking-[-0.04em] text-[#090B14] lg:text-[40px] max-lg:text-center max-sm:text-[26px]`}

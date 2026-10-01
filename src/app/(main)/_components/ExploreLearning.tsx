@@ -87,7 +87,7 @@ export default function ExploreLearning() {
       className="bg-white pt-10 pb-20 lg:pt-16 lg:pb-24 max-sm:pt-8 max-sm:pb-14"
       aria-labelledby="learning-paths-heading"
     >
-      <div className="mx-auto w-[calc(100%_-_2rem)] max-w-[1080px] md:w-[calc(100%_-_10rem)] lg:w-[calc(100%_-_5rem)]">
+      <div className="home-container">
         <header className="text-center">
           <h2
             className={`${poppins.className} text-[26px] leading-[1.15] font-semibold tracking-[-0.04em] text-[#090B14] lg:text-[32px] max-sm:text-[23px]`}

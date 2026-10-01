@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <header className="relative z-20 h-20 text-white max-sm:h-[68px]">
       <nav
-        className="mx-auto grid h-full w-[calc(100%_-_9.375rem)] max-w-[1200px] grid-cols-[1fr_auto_1fr] items-center max-md:w-[calc(100%_-_2rem)] max-md:grid-cols-[1fr_auto] max-sm:w-[calc(100%_-_1.75rem)]"
+        className="home-container grid h-full grid-cols-[1fr_auto_1fr] items-center max-md:grid-cols-[1fr_auto] max-sm:w-[calc(100%_-_1.75rem)]"
         aria-label="Primary navigation"
       >
         <Link

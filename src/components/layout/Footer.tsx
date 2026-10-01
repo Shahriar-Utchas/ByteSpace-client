@@ -45,7 +45,7 @@ const footerLinkStyles =
 export default function Footer() {
   return (
     <footer className="bg-white pt-16 pb-12 text-[#30333A] max-sm:pt-12 max-sm:pb-8">
-      <div className="mx-auto w-[calc(100%_-_2rem)] max-w-[1080px] lg:w-[calc(100%_-_5rem)]">
+      <div className="home-container">
         <div className="grid gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-[100px]">
           <div className="max-w-[525px]">
             <Link

@@ -232,7 +232,7 @@ export default function DiscoverPassion() {
       className="bg-white py-12 lg:py-[74px] max-sm:py-10"
       aria-labelledby="discover-passion-heading"
     >
-      <div className="mx-auto w-[calc(100%_-_2rem)] max-w-[1120px] md:w-[calc(100%_-_9rem)] lg:w-[calc(100%_-_5rem)]">
+      <div className="home-container">
         <header className="text-center">
           <h2
             className={`${poppins.className} mx-auto max-w-[580px] text-[28px] leading-[1.12] font-semibold tracking-[-0.04em] text-[#090B14] lg:max-w-[760px] lg:text-[42px] max-sm:text-[25px]`}
@@ -248,7 +248,7 @@ export default function DiscoverPassion() {
           </p>
         </header>
 
-        <div className="mx-auto mt-7 max-w-[720px] lg:mt-10 lg:max-w-[1120px]">
+        <div className="mx-auto mt-7 max-w-[720px] lg:mt-10 lg:max-w-[1440px]">
           <ul className="flex flex-wrap items-center justify-center gap-2 lg:gap-3">
             {CATEGORIES.map((category) => {
               const isActive = activeCategory === category;
