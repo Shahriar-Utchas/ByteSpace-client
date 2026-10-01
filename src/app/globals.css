@@ -1,7 +1,32 @@
 @import "tailwindcss";
 
+:root {
+  --search-blue: #003be2;
+  --search-lime: #d4fb20;
+  --search-surface: #ffffff;
+  --search-soft: #f5f5f6;
+  --search-text: #242528;
+  --search-muted: #4b4c53;
+  --search-meta: #4f4f4f;
+  --search-placeholder: #82868e;
+  --search-border: #ced0d3;
+  --search-grid: rgba(255, 255, 255, 0.12);
+}
+
 @layer components {
   .home-container {
+    width: calc(100% - 2rem);
+    max-width: 100rem;
+    margin-inline: auto;
+  }
+
+  .course-container {
+    width: calc(100% - 2rem);
+    max-width: 100rem;
+    margin-inline: auto;
+  }
+
+  .course-detail-container {
     width: calc(100% - 2rem);
     max-width: 100rem;
     margin-inline: auto;
@@ -11,11 +36,27 @@
     .home-container {
       width: calc(100% - 4rem);
     }
+
+    .course-container {
+      width: 83.333333%;
+    }
+
+    .course-detail-container {
+      width: 83.333333%;
+    }
   }
 
   @media (min-width: 64rem) {
     .home-container {
       width: calc(100% - 6rem);
+    }
+
+    .course-container {
+      width: 83.333333%;
+    }
+
+    .course-detail-container {
+      width: 83.333333%;
     }
   }
 }

@@ -24,7 +24,7 @@ const LEARNING_PATHS = [
 
 function PathIcon({ name }: { name: PathIconName }) {
   const commonProps = {
-    className: "size-5 lg:size-7",
+    className: "size-5 lg:size-7 2xl:size-[35px]",
     viewBox: "0 0 24 24",
     fill: "none",
     stroke: "currentColor",
@@ -84,18 +84,18 @@ function PathIcon({ name }: { name: PathIconName }) {
 export default function ExploreLearning() {
   return (
     <section
-      className="bg-white pt-10 pb-20 lg:pt-16 lg:pb-24 max-sm:pt-8 max-sm:pb-14"
+      className="bg-white pt-10 pb-20 lg:pt-16 lg:pb-24 2xl:pt-20 2xl:pb-[120px] max-sm:pt-8 max-sm:pb-14"
       aria-labelledby="learning-paths-heading"
     >
       <div className="home-container">
         <header className="text-center">
           <h2
-            className={`${poppins.className} text-[26px] leading-[1.15] font-semibold tracking-[-0.04em] text-[#090B14] lg:text-[32px] max-sm:text-[23px]`}
+            className={`${poppins.className} text-[26px] leading-[1.15] font-semibold tracking-[-0.04em] text-[#090B14] lg:text-[32px] 2xl:text-[40px] max-sm:text-[23px]`}
             id="learning-paths-heading"
           >
             Explore Diverse Learning Paths at Bytespace
           </h2>
-          <p className="mx-auto mt-3 max-w-[650px] text-xs leading-[1.7] text-[#90939B] lg:mt-4 lg:max-w-[850px] lg:text-sm max-sm:text-[11px]">
+          <p className="mx-auto mt-3 max-w-[650px] text-xs leading-[1.7] text-[#90939B] lg:mt-4 lg:max-w-[850px] lg:text-sm 2xl:mt-5 2xl:max-w-[1060px] 2xl:text-[17px] max-sm:text-[11px]">
             At Bytespace, we believe in empowering individuals through knowledge.
             Our diverse range of courses spans various fields, ensuring there&apos;s
             something for everyone. Unleash your potential and explore our carefully
@@ -103,16 +103,16 @@ export default function ExploreLearning() {
           </p>
         </header>
 
-        <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-16 lg:grid-cols-6 lg:gap-8">
+        <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-16 lg:grid-cols-6 lg:gap-8 2xl:mt-20 2xl:gap-10">
           {LEARNING_PATHS.map((path) => (
             <li
-              className="flex aspect-square min-w-0 flex-col items-center justify-center rounded-[16px] border border-[#D6D8DD] bg-white text-center lg:rounded-[22px]"
+              className="flex aspect-square min-w-0 flex-col items-center justify-center rounded-[16px] border border-[#D6D8DD] bg-white text-center lg:rounded-[22px] 2xl:rounded-[28px]"
               key={path.name}
             >
-              <span className="grid size-10 place-items-center rounded-full bg-[#D4FB20] text-[#16220A] lg:size-[54px]">
+              <span className="grid size-10 place-items-center rounded-full bg-[#D4FB20] text-[#16220A] lg:size-[54px] 2xl:size-[68px]">
                 <PathIcon name={path.icon} />
               </span>
-              <h3 className="mt-3 px-2 text-sm leading-tight font-medium text-[#292C33] lg:mt-4 lg:text-base">
+              <h3 className="mt-3 px-2 text-sm leading-tight font-medium text-[#292C33] lg:mt-4 lg:text-base 2xl:mt-5 2xl:text-xl">
                 {path.name}
               </h3>
             </li>

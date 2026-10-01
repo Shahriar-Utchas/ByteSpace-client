@@ -1,80 +1,134 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
 import { clashDisplay } from "@/app/fonts";
-import { HERO_ASSETS } from "@/constants";
 
-const linkStyles =
-  "rounded-md text-[10px] leading-none text-white/95 no-underline transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] lg:text-[13px] max-sm:text-xs";
+type NavbarProps = {
+  variant?: "default" | "search" | "detail";
+};
 
-export default function Navbar() {
+const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Courses", href: "/courses" },
+  { label: "Creators", href: "/creators/purepearl-studio" },
+] as const;
+
+export default function Navbar({ variant = "default" }: NavbarProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isCourse = variant !== "default";
+  const containerClass = variant === "detail" ? "course-detail-container" : "course-container";
+  const linkStyles = `rounded-md text-white/95 no-underline transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] ${
+    isCourse ? "text-base leading-6" : "text-[10px] leading-none lg:text-[13px] 2xl:text-base"
+  }`;
+
   return (
-    <header className="relative z-20 h-20 text-white max-sm:h-[68px]">
+    <header
+      className={`relative z-20 text-white ${isCourse ? "h-[120px] max-md:h-20" : "h-20 2xl:h-24 max-sm:h-[68px]"}`}
+    >
       <nav
-        className="home-container grid h-full grid-cols-[1fr_auto_1fr] items-center max-md:grid-cols-[1fr_auto] max-sm:w-[calc(100%_-_1.75rem)]"
+        className={`${isCourse ? containerClass : "home-container max-sm:w-[calc(100%_-_1.75rem)]"} grid h-full grid-cols-[1fr_auto_1fr] items-center max-md:grid-cols-[1fr_auto]`}
         aria-label="Primary navigation"
       >
         <Link
-          className={`${clashDisplay.className} inline-flex items-center gap-[5px] justify-self-start rounded-md text-[15px] font-semibold tracking-[-0.02em] text-white no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] lg:gap-2 lg:text-[19px] max-sm:gap-1.5 max-sm:text-[17px]`}
+          className={`${clashDisplay.className} inline-flex items-center justify-self-start rounded-md font-semibold text-white no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] ${
+            isCourse
+              ? "gap-2 text-2xl leading-none max-sm:text-xl"
+              : "gap-[5px] text-[15px] tracking-[-0.02em] lg:gap-2 lg:text-[19px] 2xl:gap-2.5 2xl:text-2xl max-sm:gap-1.5 max-sm:text-[17px]"
+          }`}
           href="/"
           aria-label="ByteSpace home"
         >
           <Image
-            className="h-5 w-[19px] shrink-0 object-contain lg:h-7 lg:w-[26px] max-sm:h-6 max-sm:w-[22px]"
-            src={HERO_ASSETS.logo}
-            alt="ByteSpace"
-            width={116}
-            height={126}
+              className={
+                isCourse
+                  ? "size-8 shrink-0 object-contain max-sm:size-7"
+                  : "size-5 shrink-0 object-contain lg:size-7 2xl:size-8 max-sm:size-6"
+              }
+              src="/assets/hero-assets/logo-mark.svg"
+              alt=""
+              width={32}
+              height={32}
+            priority={isCourse}
           />
           <span>ByteSpace</span>
         </Link>
 
-        <div className="flex items-center gap-[18px] max-md:hidden">
-          <Link className={linkStyles} href="/">
-            Home
-          </Link>
-          <Link className={linkStyles} href="#courses">
-            Courses
-          </Link>
-          <Link className={linkStyles} href="#creators">
-            Creators
-          </Link>
+        <div className={`hidden items-center md:flex ${isCourse ? "gap-6" : "gap-[18px] 2xl:gap-6"}`}>
+          {NAV_LINKS.map((link, index) => (
+            <Link
+              className={`${linkStyles} ${isCourse && index === 0 ? "font-medium" : "font-normal"}`}
+              href={link.href}
+              key={link.label}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
-        <div className="flex translate-x-1.5 items-center gap-3.5 justify-self-end max-md:translate-x-0 max-md:gap-[18px] max-sm:gap-[13px]">
-          <Link className={`${linkStyles} max-sm:hidden`} href="/login">
+        <div className={`hidden items-center justify-self-end md:flex ${isCourse ? "gap-6" : "translate-x-1.5 gap-3.5 2xl:gap-5"}`}>
+          <Link className={linkStyles} href="/login">
             Sign In
           </Link>
           <Link className={linkStyles} href="/register">
             Join Us
           </Link>
           <Link
-            className={`${linkStyles} grid size-[25px] place-items-center`}
-            href="#cart"
+            className={`${linkStyles} grid size-6 place-items-center`}
+            href="/cart"
             aria-label="Open shopping bag"
           >
-            <svg
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
+            <Image
+              src="/assets/search/shopping-bag.svg"
+              alt=""
+              width={24}
+              height={24}
               aria-hidden="true"
-            >
-              <path
-                d="M6.7 8.25h10.6l.8 11H5.9l.8-11Z"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9.25 9V6.65a2.75 2.75 0 0 1 5.5 0V9"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              />
-            </svg>
+            />
           </Link>
         </div>
+
+        <button
+          className="grid size-11 cursor-pointer place-items-center justify-self-end rounded-full border border-white/30 bg-white/10 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#D4FB20] md:hidden"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <svg className="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            {menuOpen ? (
+              <path d="m5 5 14 14M19 5 5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            ) : (
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            )}
+          </svg>
+        </button>
       </nav>
+
+      {menuOpen ? (
+        <div
+          className="absolute inset-x-0 top-full border-t border-white/15 bg-[#003BE2] px-4 py-4 shadow-[0_18px_35px_rgba(0,25,110,0.24)] md:hidden"
+          id="mobile-navigation"
+        >
+          <div className={`${isCourse ? containerClass : "course-container"} flex flex-col gap-1`}>
+            {[...NAV_LINKS, { label: "Sign In", href: "/login" }, { label: "Join Us", href: "/register" }].map(
+              (link) => (
+                <Link
+                  className="rounded-xl px-4 py-3 text-sm font-medium text-white no-underline hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4FB20]"
+                  href={link.href}
+                  key={link.label}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
