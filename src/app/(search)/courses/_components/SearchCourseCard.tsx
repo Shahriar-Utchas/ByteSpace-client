@@ -9,12 +9,12 @@ import type { SearchCourse } from "../_data/courses";
 export default function SearchCourseCard({ course }: { course: SearchCourse }) {
   return (
     <article className="min-w-0 overflow-hidden rounded-3xl border border-[var(--search-border)] bg-white transition-[border-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[#B3B6BB] hover:shadow-[0_18px_45px_rgba(20,28,48,0.08)] focus-within:border-[var(--search-blue)]">
-      <Link
-        className="flex h-full min-h-[382px] flex-col p-[15px] text-inherit no-underline focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-[var(--search-blue)]"
-        href={`/courses/${course.slug}`}
-        aria-label={`View ${course.title}`}
-      >
-        <div className="relative aspect-[341/195] shrink-0 overflow-hidden rounded-xl bg-[#ECEDEF]">
+      <div className="flex h-full min-h-[382px] flex-col p-[15px]">
+        <Link
+          className="relative block aspect-[341/195] shrink-0 overflow-hidden rounded-xl bg-[#ECEDEF] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[var(--search-blue)]"
+          href={`/courses/${course.slug}`}
+          aria-label={`View ${course.title}`}
+        >
           <Image
             className="object-cover"
             src={course.image}
@@ -34,18 +34,26 @@ export default function SearchCourseCard({ course }: { course: SearchCourse }) {
               {course.comments} Comments
             </span>
           </div>
-        </div>
+        </Link>
 
         <div className="mt-5 flex min-w-0 items-start gap-3">
           <div className="min-w-0 flex-1">
-            <h2
-              className={`${poppins.className} truncate text-xl leading-[1.2] font-semibold tracking-[-0.01em] text-black`}
-              title={course.title}
-            >
-              {course.title}
+            <h2 className="truncate" title={course.title}>
+              <Link
+                className={`${poppins.className} text-xl leading-[1.2] font-semibold tracking-[-0.01em] text-black no-underline hover:text-[var(--search-blue)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--search-blue)]`}
+                href={`/courses/${course.slug}`}
+              >
+                {course.title}
+              </Link>
             </h2>
             <p className="text-xs leading-[1.6] text-[var(--search-meta)]">
-              by <span className="text-[var(--search-blue)]">purepearl studio</span>
+              by{" "}
+              <Link
+                className="text-[var(--search-blue)] no-underline hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--search-blue)]"
+                href="/creators/purepearl-studio"
+              >
+                purepearl studio
+              </Link>
             </p>
           </div>
 
@@ -101,7 +109,7 @@ export default function SearchCourseCard({ course }: { course: SearchCourse }) {
             /lifetime
           </span>
         </p>
-      </Link>
+      </div>
     </article>
   );
 }

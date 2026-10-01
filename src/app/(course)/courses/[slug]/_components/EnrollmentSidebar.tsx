@@ -57,7 +57,7 @@ export default function EnrollmentSidebar() {
         <div className="flex items-center gap-4">
           <Image
             className="size-12 rounded-full object-cover"
-            src="/assets/hero-assets/avatar-1.jpg"
+            src="/assets/creator/purepearl-studio.png"
             alt="PurePearl Studio creator"
             width={48}
             height={48}
@@ -72,7 +72,7 @@ export default function EnrollmentSidebar() {
         </p>
         <Link
           className="mt-6 inline-flex h-10 items-center rounded-full border border-[var(--search-border)] px-5 text-sm font-medium text-[var(--search-text)] no-underline transition-colors hover:border-[var(--search-blue)] hover:text-[var(--search-blue)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--search-blue)]"
-          href="#creator"
+          href="/creators/purepearl-studio"
         >
           See Full Profile
         </Link>

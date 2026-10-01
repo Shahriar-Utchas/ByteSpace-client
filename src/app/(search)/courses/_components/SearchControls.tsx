@@ -61,6 +61,7 @@ type SearchControlsProps = {
   onLevelFilterChange: (level: string) => void;
   onPriceFilterChange: (price: string) => void;
   onSortOrderChange: (sort: string) => void;
+  showCategoryTabs?: boolean;
 };
 
 export default function SearchControls({
@@ -74,6 +75,7 @@ export default function SearchControls({
   onLevelFilterChange,
   onPriceFilterChange,
   onSortOrderChange,
+  showCategoryTabs = true,
 }: SearchControlsProps) {
   return (
     <>
@@ -132,7 +134,7 @@ export default function SearchControls({
         </SelectControl>
       </div>
 
-      <div className="mt-8 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {showCategoryTabs ? <div className="mt-8 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex min-w-max items-center justify-start gap-4">
           {SEARCH_CATEGORIES.map((category) => {
             const selected = category === activeCategory;
@@ -154,7 +156,7 @@ export default function SearchControls({
             );
           })}
         </div>
-      </div>
+      </div> : null}
     </>
   );
 }

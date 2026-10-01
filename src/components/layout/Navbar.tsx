@@ -13,7 +13,7 @@ type NavbarProps = {
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Courses", href: "/courses" },
-  { label: "Creators", href: "/#creators" },
+  { label: "Creators", href: "/creators/purepearl-studio" },
 ] as const;
 
 export default function Navbar({ variant = "default" }: NavbarProps) {
