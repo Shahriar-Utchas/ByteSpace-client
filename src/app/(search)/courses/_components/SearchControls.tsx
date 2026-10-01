@@ -133,7 +133,7 @@ export default function SearchControls({
       </div>
 
       <div className="mt-8 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex min-w-max items-center justify-between gap-4">
+        <div className="flex min-w-max items-center justify-start gap-4">
           {SEARCH_CATEGORIES.map((category) => {
             const selected = category === activeCategory;
 

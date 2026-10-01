@@ -10,19 +10,19 @@ const limeFilter =
 export default function CreateCourse() {
   return (
     <section
-      className="relative isolate flex min-h-[340px] overflow-hidden bg-[#003BE2] text-white [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-position:top_left] [background-size:80px_80px] lg:min-h-[430px] max-md:[background-size:64px_64px] max-sm:min-h-[440px]"
+      className="relative isolate flex min-h-[340px] overflow-hidden bg-[#003BE2] text-white [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-position:top_left] [background-size:80px_80px] lg:min-h-[430px] 2xl:min-h-[538px] 2xl:[background-size:100px_100px] max-md:[background-size:64px_64px] max-sm:min-h-[440px]"
       aria-labelledby="create-course-heading"
     >
-      <div className="relative z-10 mx-auto flex w-[calc(100%_-_2rem)] max-w-[900px] flex-col items-center justify-center py-14 text-center lg:max-w-[1040px] lg:py-20 max-sm:py-16">
+      <div className="relative z-10 mx-auto flex w-[calc(100%_-_2rem)] max-w-[900px] flex-col items-center justify-center py-14 text-center lg:max-w-[1040px] lg:py-20 2xl:max-w-[1300px] 2xl:py-[100px] max-sm:py-16">
         <h2
-          className={`${poppins.className} max-w-[700px] text-[30px] leading-[1.12] font-semibold tracking-[-0.04em] lg:max-w-[820px] lg:text-[42px] max-sm:text-[27px]`}
+          className={`${poppins.className} max-w-[700px] text-[30px] leading-[1.12] font-semibold tracking-[-0.04em] lg:max-w-[820px] lg:text-[42px] 2xl:max-w-[1025px] 2xl:text-[52px] max-sm:text-[27px]`}
           id="create-course-heading"
         >
           <span className="block max-sm:inline">Unlock Your Potential as a</span>{" "}
           <span className="block max-sm:inline">Creator with ByteSpace</span>
         </h2>
 
-        <p className="mt-7 max-w-[740px] text-xs leading-[1.7] text-white/90 lg:max-w-[900px] lg:text-sm max-sm:mt-5 max-sm:text-[11px]">
+        <p className="mt-7 max-w-[740px] text-xs leading-[1.7] text-white/90 lg:max-w-[900px] lg:text-sm 2xl:mt-9 2xl:max-w-[1125px] 2xl:text-[17px] max-sm:mt-5 max-sm:text-[11px]">
           Experience the collaboration of numerous creators and an expanding
           selection of courses. Register now and become a part of a community
           comprising over 10,000 local and international creators. Utilize our Course
@@ -31,7 +31,7 @@ export default function CreateCourse() {
         </p>
 
         <Link
-          className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-[#D4FB20] px-7 text-xs font-medium text-[#112600] no-underline transition-shadow hover:shadow-[0_10px_26px_rgba(22,40,0,0.28)] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-white lg:mt-10 lg:h-11 lg:px-8 lg:text-sm"
+          className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-[#D4FB20] px-7 text-xs font-medium text-[#112600] no-underline transition-shadow hover:shadow-[0_10px_26px_rgba(22,40,0,0.28)] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-white lg:mt-10 lg:h-11 lg:px-8 lg:text-sm 2xl:mt-[50px] 2xl:h-[55px] 2xl:px-10 2xl:text-[17px]"
           href="/register"
         >
           Join as Creator

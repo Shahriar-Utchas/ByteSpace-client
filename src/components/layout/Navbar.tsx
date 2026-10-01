@@ -7,7 +7,7 @@ import { useState } from "react";
 import { clashDisplay } from "@/app/fonts";
 
 type NavbarProps = {
-  variant?: "default" | "search";
+  variant?: "default" | "search" | "detail";
 };
 
 const NAV_LINKS = [
@@ -18,47 +18,48 @@ const NAV_LINKS = [
 
 export default function Navbar({ variant = "default" }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isSearch = variant === "search";
+  const isCourse = variant !== "default";
+  const containerClass = variant === "detail" ? "course-detail-container" : "course-container";
   const linkStyles = `rounded-md text-white/95 no-underline transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] ${
-    isSearch ? "text-base leading-6" : "text-[10px] leading-none lg:text-[13px]"
+    isCourse ? "text-base leading-6" : "text-[10px] leading-none lg:text-[13px] 2xl:text-base"
   }`;
 
   return (
     <header
-      className={`relative z-20 text-white ${isSearch ? "h-[120px] max-md:h-20" : "h-20 max-sm:h-[68px]"}`}
+      className={`relative z-20 text-white ${isCourse ? "h-[120px] max-md:h-20" : "h-20 2xl:h-24 max-sm:h-[68px]"}`}
     >
       <nav
-        className={`${isSearch ? "course-container" : "home-container max-sm:w-[calc(100%_-_1.75rem)]"} grid h-full grid-cols-[1fr_auto_1fr] items-center max-md:grid-cols-[1fr_auto]`}
+        className={`${isCourse ? containerClass : "home-container max-sm:w-[calc(100%_-_1.75rem)]"} grid h-full grid-cols-[1fr_auto_1fr] items-center max-md:grid-cols-[1fr_auto]`}
         aria-label="Primary navigation"
       >
         <Link
           className={`${clashDisplay.className} inline-flex items-center justify-self-start rounded-md font-semibold text-white no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4FB20] ${
-            isSearch
+            isCourse
               ? "gap-2 text-2xl leading-none max-sm:text-xl"
-              : "gap-[5px] text-[15px] tracking-[-0.02em] lg:gap-2 lg:text-[19px] max-sm:gap-1.5 max-sm:text-[17px]"
+              : "gap-[5px] text-[15px] tracking-[-0.02em] lg:gap-2 lg:text-[19px] 2xl:gap-2.5 2xl:text-2xl max-sm:gap-1.5 max-sm:text-[17px]"
           }`}
           href="/"
           aria-label="ByteSpace home"
         >
           <Image
               className={
-                isSearch
+                isCourse
                   ? "size-8 shrink-0 object-contain max-sm:size-7"
-                  : "size-5 shrink-0 object-contain lg:size-7 max-sm:size-6"
+                  : "size-5 shrink-0 object-contain lg:size-7 2xl:size-8 max-sm:size-6"
               }
               src="/assets/hero-assets/logo-mark.svg"
               alt=""
               width={32}
               height={32}
-            priority={isSearch}
+            priority={isCourse}
           />
           <span>ByteSpace</span>
         </Link>
 
-        <div className={`hidden items-center md:flex ${isSearch ? "gap-6" : "gap-[18px]"}`}>
+        <div className={`hidden items-center md:flex ${isCourse ? "gap-6" : "gap-[18px] 2xl:gap-6"}`}>
           {NAV_LINKS.map((link, index) => (
             <Link
-              className={`${linkStyles} ${isSearch && index === 0 ? "font-medium" : "font-normal"}`}
+              className={`${linkStyles} ${isCourse && index === 0 ? "font-medium" : "font-normal"}`}
               href={link.href}
               key={link.label}
             >
@@ -67,7 +68,7 @@ export default function Navbar({ variant = "default" }: NavbarProps) {
           ))}
         </div>
 
-        <div className={`hidden items-center justify-self-end md:flex ${isSearch ? "gap-6" : "translate-x-1.5 gap-3.5"}`}>
+        <div className={`hidden items-center justify-self-end md:flex ${isCourse ? "gap-6" : "translate-x-1.5 gap-3.5 2xl:gap-5"}`}>
           <Link className={linkStyles} href="/login">
             Sign In
           </Link>
@@ -112,7 +113,7 @@ export default function Navbar({ variant = "default" }: NavbarProps) {
           className="absolute inset-x-0 top-full border-t border-white/15 bg-[#003BE2] px-4 py-4 shadow-[0_18px_35px_rgba(0,25,110,0.24)] md:hidden"
           id="mobile-navigation"
         >
-          <div className="course-container flex flex-col gap-1">
+          <div className={`${isCourse ? containerClass : "course-container"} flex flex-col gap-1`}>
             {[...NAV_LINKS, { label: "Sign In", href: "/login" }, { label: "Join Us", href: "/register" }].map(
               (link) => (
                 <Link

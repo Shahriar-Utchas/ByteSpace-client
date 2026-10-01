@@ -41,22 +41,22 @@ function ClientList({ hidden = false, listRef }: ClientListProps) {
   return (
     <ul
       ref={listRef}
-      className="flex shrink-0 items-center gap-6 pr-6 lg:gap-14 lg:pr-14 max-sm:gap-5 max-sm:pr-5"
+      className="flex shrink-0 items-center gap-6 pr-6 lg:gap-14 lg:pr-14 2xl:gap-[70px] 2xl:pr-[70px] max-sm:gap-5 max-sm:pr-5"
       aria-hidden={hidden || undefined}
     >
       {CLIENTS.map((client) => (
         <li
-          className="flex w-[104px] shrink-0 items-center gap-1.5 text-[#91949B] lg:w-[120px] lg:gap-2 max-sm:w-[98px]"
+          className="flex w-[104px] shrink-0 items-center gap-1.5 text-[#91949B] lg:w-[120px] lg:gap-2 2xl:w-[150px] 2xl:gap-2.5 max-sm:w-[98px]"
           key={client.id}
         >
           <Image
-            className="size-[22px] shrink-0 object-contain lg:size-6 max-sm:size-5"
+            className="size-[22px] shrink-0 object-contain lg:size-6 2xl:size-[30px] max-sm:size-5"
             src={client.image}
             alt=""
             width={160}
             height={160}
           />
-          <span className="whitespace-nowrap text-[11px] leading-none font-semibold tracking-[-0.025em] lg:text-xs max-sm:text-[10px]">
+          <span className="whitespace-nowrap text-[11px] leading-none font-semibold tracking-[-0.025em] lg:text-xs 2xl:text-[15px] max-sm:text-[10px]">
             {client.name}
           </span>
         </li>
@@ -125,7 +125,7 @@ export default function Clients() {
 
   return (
     <section
-      className="h-[106px] overflow-hidden bg-[#F7F7F8] max-md:h-24 max-sm:h-20"
+      className="h-[106px] overflow-hidden bg-[#F7F7F8] 2xl:h-[132px] max-md:h-24 max-sm:h-20"
       aria-labelledby="clients-heading"
     >
       <h2 className="sr-only" id="clients-heading">

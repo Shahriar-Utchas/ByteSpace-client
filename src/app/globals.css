@@ -26,12 +26,22 @@
     margin-inline: auto;
   }
 
+  .course-detail-container {
+    width: calc(100% - 2rem);
+    max-width: 100rem;
+    margin-inline: auto;
+  }
+
   @media (min-width: 48rem) {
     .home-container {
       width: calc(100% - 4rem);
     }
 
     .course-container {
+      width: 83.333333%;
+    }
+
+    .course-detail-container {
       width: 83.333333%;
     }
   }
@@ -42,6 +52,10 @@
     }
 
     .course-container {
+      width: 83.333333%;
+    }
+
+    .course-detail-container {
       width: 83.333333%;
     }
   }

@@ -36,23 +36,23 @@ const TESTIMONIALS = [
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <article className="flex min-h-[310px] flex-col rounded-[18px] bg-white p-5 lg:min-h-[380px] lg:rounded-[22px] lg:p-7">
+    <article className="flex min-h-[310px] flex-col rounded-[18px] bg-white p-5 lg:min-h-[380px] lg:rounded-[22px] lg:p-7 2xl:min-h-[475px] 2xl:rounded-[28px] 2xl:p-[35px]">
       <Image
-        className="size-12 rounded-full object-cover lg:size-14"
+        className="size-12 rounded-full object-cover lg:size-14 2xl:size-[70px]"
         src={testimonial.avatar}
         alt={`${testimonial.name}, ${testimonial.role}`}
         width={56}
         height={56}
       />
 
-      <h3 className="mt-5 text-sm leading-none font-bold text-[#1D2027] lg:mt-6 lg:text-base">
+      <h3 className="mt-5 text-sm leading-none font-bold text-[#1D2027] lg:mt-6 lg:text-base 2xl:mt-[30px] 2xl:text-xl">
         {testimonial.name}
       </h3>
-      <p className="mt-2 text-xs leading-none font-medium text-[#003BE2] lg:text-sm">
+      <p className="mt-2 text-xs leading-none font-medium text-[#003BE2] lg:text-sm 2xl:mt-2.5 2xl:text-[17px]">
         {testimonial.role}
       </p>
 
-      <blockquote className="mt-6 text-xs leading-[1.75] text-[#5E626B] lg:mt-7 lg:text-sm">
+      <blockquote className="mt-6 text-xs leading-[1.75] text-[#5E626B] lg:mt-7 lg:text-sm 2xl:mt-[35px] 2xl:text-[17px]">
         <span aria-hidden="true">&ldquo;</span>
         {testimonial.quote}
         <span aria-hidden="true">&rdquo;</span>
@@ -64,7 +64,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 export default function ClientReview() {
   return (
     <section
-      className="relative isolate overflow-hidden bg-white py-16 lg:py-20 max-sm:py-12"
+      className="relative isolate overflow-hidden bg-white py-16 lg:py-20 2xl:py-[100px] max-sm:py-12"
       aria-labelledby="client-review-heading"
     >
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
@@ -74,16 +74,16 @@ export default function ClientReview() {
       </div>
 
       <div className="home-container relative z-10">
-        <header className="grid items-center gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+        <header className="grid items-center gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24 2xl:gap-[120px]">
           <h2
-            className={`${poppins.className} max-w-[500px] text-[29px] leading-[1.2] font-semibold tracking-[-0.04em] text-[#090B14] lg:text-[40px] max-lg:text-center max-sm:text-[26px]`}
+            className={`${poppins.className} max-w-[500px] text-[29px] leading-[1.2] font-semibold tracking-[-0.04em] text-[#090B14] lg:text-[40px] 2xl:max-w-[625px] 2xl:text-[50px] max-lg:text-center max-sm:text-[26px]`}
             id="client-review-heading"
           >
             Discover What Our
             <span className="block">Community Is Saying</span>
           </h2>
 
-          <p className="text-xs leading-[1.75] text-[#62666F] lg:text-sm max-lg:mx-auto max-lg:max-w-[680px] max-lg:text-center">
+          <p className="text-xs leading-[1.75] text-[#62666F] lg:text-sm 2xl:text-[17px] max-lg:mx-auto max-lg:max-w-[680px] max-lg:text-center">
             At ByteSpace, our vibrant community of learners and creators is at the
             heart of what we do. Hear directly from those who have experienced the
             transformative journey of learning and creating on our platform. Explore
@@ -92,7 +92,7 @@ export default function ClientReview() {
           </p>
         </header>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8 2xl:mt-20 2xl:gap-10">
           {TESTIMONIALS.map((testimonial) => (
             <TestimonialCard testimonial={testimonial} key={testimonial.name} />
           ))}

@@ -11,7 +11,7 @@ export default function SearchCourseCard({ course }: { course: SearchCourse }) {
     <article className="min-w-0 overflow-hidden rounded-3xl border border-[var(--search-border)] bg-white transition-[border-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:border-[#B3B6BB] hover:shadow-[0_18px_45px_rgba(20,28,48,0.08)] focus-within:border-[var(--search-blue)]">
       <Link
         className="flex h-full min-h-[382px] flex-col p-[15px] text-inherit no-underline focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-[var(--search-blue)]"
-        href={`/courses?query=${encodeURIComponent(course.title)}`}
+        href={`/courses/${course.slug}`}
         aria-label={`View ${course.title}`}
       >
         <div className="relative aspect-[341/195] shrink-0 overflow-hidden rounded-xl bg-[#ECEDEF]">
