@@ -77,7 +77,7 @@ export default function Navbar({ variant = "default" }: NavbarProps) {
           </Link>
           <Link
             className={`${linkStyles} grid size-6 place-items-center`}
-            href="#cart"
+            href="/cart"
             aria-label="Open shopping bag"
           >
             <Image
