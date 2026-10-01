@@ -29,15 +29,21 @@ export default function LoginPage() {
       description="Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge."
       variant="login"
     >
-      <div className="flex h-[77svh] min-h-[700px] w-full max-w-[580px] flex-col rounded-[28px] bg-white p-8 text-[#202329] sm:p-12 xl:max-h-[834px] xl:p-14 2xl:max-w-[620px] 2xl:rounded-[32px] 2xl:p-16">
-        <p className="text-sm font-medium text-[#003BE2] 2xl:text-base">Sign In</p>
+      <div className="flex h-full min-h-0 w-full max-w-[580px] flex-col overflow-hidden rounded-[22px] bg-white p-4 text-[#202329] sm:p-5 lg:h-[calc(100svh-6rem)] lg:max-h-[834px] lg:rounded-[28px] lg:p-[clamp(24px,5vh,56px)] 2xl:max-w-[620px] 2xl:rounded-[32px] 2xl:p-[clamp(40px,5vh,64px)]">
+        <p className="text-[11px] font-medium text-[#003BE2] lg:text-[clamp(13px,1.5vh,16px)]">
+          Sign In
+        </p>
         <h1
-          className={`${poppins.className} mt-2 text-[34px] leading-none font-semibold tracking-[-0.045em] 2xl:text-[40px]`}
+          className={`${poppins.className} mt-1 text-[26px] leading-none font-semibold tracking-[-0.045em] lg:mt-2 lg:text-[clamp(32px,4vh,40px)]`}
         >
           Welcome Back
         </h1>
 
-        <form className="mt-12 space-y-6" action="/login" method="post">
+        <form
+          className="mt-4 space-y-3 lg:mt-[clamp(24px,4.5vh,48px)] lg:space-y-[clamp(12px,2.2vh,24px)]"
+          action="/login"
+          method="post"
+        >
           <AuthField
             id="login-email"
             label="Email"
@@ -59,7 +65,7 @@ export default function LoginPage() {
 
           <div className="flex justify-end pt-2">
             <button
-              className="h-11 cursor-pointer rounded-full bg-[#D4FB20] px-7 text-sm font-medium text-[#142800] transition-shadow hover:shadow-[0_9px_24px_rgba(45,67,0,0.2)] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2]"
+              className="h-9 cursor-pointer rounded-full bg-[#D4FB20] px-6 text-xs font-medium text-[#142800] transition-shadow hover:shadow-[0_9px_24px_rgba(45,67,0,0.2)] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2] lg:h-11 lg:px-7 lg:text-sm"
               type="submit"
             >
               Sign In
@@ -67,22 +73,24 @@ export default function LoginPage() {
           </div>
         </form>
 
-        <div className="mt-20 flex items-center gap-4 text-xs text-[#92969F]">
+        <div className="mt-4 flex items-center gap-3 text-[10px] text-[#92969F] lg:mt-[clamp(28px,7vh,80px)] lg:gap-4 lg:text-xs">
           <span className="h-px flex-1 bg-[#C8CBD1]" />
           <span>or</span>
           <span className="h-px flex-1 bg-[#C8CBD1]" />
         </div>
 
-        <div className="mt-7 flex justify-center gap-4">
+        <div className="mt-2.5 flex justify-center gap-3 lg:mt-[clamp(14px,2.5vh,28px)] lg:gap-4">
           <button
-            className="grid size-12 cursor-pointer place-items-center rounded-[14px] border border-[#D2D5DB] text-black transition-colors hover:bg-[#F5F5F6] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2]"
+            className="grid size-9 cursor-pointer place-items-center rounded-[11px] border border-[#D2D5DB] text-black transition-colors hover:bg-[#F5F5F6] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2] lg:size-12 lg:rounded-[14px]"
             type="button"
             aria-label="Continue with Facebook"
           >
-            <FacebookIcon />
+            <span className="scale-75 lg:scale-100">
+              <FacebookIcon />
+            </span>
           </button>
           <button
-            className="grid size-12 cursor-pointer place-items-center rounded-[14px] border border-[#D2D5DB] text-[25px] leading-none font-bold text-black transition-colors hover:bg-[#F5F5F6] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2]"
+            className="grid size-9 cursor-pointer place-items-center rounded-[11px] border border-[#D2D5DB] text-xl leading-none font-bold text-black transition-colors hover:bg-[#F5F5F6] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2] lg:size-12 lg:rounded-[14px] lg:text-[25px]"
             type="button"
             aria-label="Continue with Google"
           >
@@ -90,7 +98,7 @@ export default function LoginPage() {
           </button>
         </div>
 
-        <p className="mt-auto pt-10 text-center text-xs text-[#777B84]">
+        <p className="mt-auto pt-2 text-center text-[10px] text-[#777B84] lg:pt-[clamp(20px,3.5vh,40px)] lg:text-xs">
           New user?{" "}
           <Link
             className="rounded-sm text-[#003BE2] no-underline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2]"
