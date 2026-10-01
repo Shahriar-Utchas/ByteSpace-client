@@ -40,7 +40,7 @@ const LEGAL_LINKS = [
 ] as const satisfies readonly FooterLink[];
 
 const footerLinkStyles =
-  "rounded-sm text-xs leading-none text-[#3E4148] no-underline transition-colors hover:text-[#003BE2] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2]";
+  "rounded-sm leading-none text-[#3E4148] no-underline transition-colors hover:text-[#003BE2] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#003BE2]";
 
 export default function Footer({ variant = "default" }: { variant?: "default" | "search" | "detail" }) {
   const isCourse = variant !== "default";
@@ -80,7 +80,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
 
             <p
               className={`mt-4 text-[#4B4C53] ${
-                isCourse ? "text-sm leading-[1.6]" : "text-[13px] leading-[1.6] 2xl:mt-5 2xl:text-base"
+                isCourse ? "text-base leading-[1.6]" : "text-[13px] leading-[1.6] 2xl:mt-5 2xl:text-base"
               }`}
             >
               Stay Up to date with our latest features and releases by joining our
@@ -92,7 +92,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
             <p
               className={`text-[#4B4C53] ${
                 isCourse
-                  ? "mt-6 max-w-[504px] text-xs leading-[1.6]"
+                  ? "mt-6 max-w-[504px] text-sm leading-[1.6]"
                   : "mt-5 max-w-[470px] text-[10px] leading-[1.65] 2xl:mt-6 2xl:max-w-[588px] 2xl:text-xs"
               }`}
             >
@@ -115,7 +115,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
                 {group.map((link) => (
                   <li key={link.label}>
                     <Link
-                      className={`${footerLinkStyles} ${isCourse ? "text-sm leading-[1.6] text-[#242528]" : "2xl:text-[15px]"}`}
+                      className={`${footerLinkStyles} ${isCourse ? "text-base leading-[1.6] text-[#242528]" : "text-xs 2xl:text-[15px]"}`}
                       href={link.href}
                     >
                       {link.label}
@@ -134,7 +134,7 @@ export default function Footer({ variant = "default" }: { variant?: "default" | 
         >
           <div
             className={`flex items-center justify-between gap-6 text-[#3E4148] max-sm:flex-col max-sm:items-start ${
-              isCourse ? "text-xs leading-[1.6]" : "text-[10px] 2xl:text-[13px]"
+              isCourse ? "text-sm leading-[1.6]" : "text-[10px] 2xl:text-[13px]"
             }`}
           >
             <p>© 2023 ByteSpace. All rights reserved.</p>
